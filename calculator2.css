@@ -9,18 +9,22 @@ h1 {
 }
 
 .container {
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
+   margin: auto;
    
+
 } 
 
-.numbers {
-    /* height: 35px;
-    width: 350px; */
-    font-size: 25px;
+.answer {
+    width: 50%; 
+    height: 45px;
+    font-size: 35px;
     padding: 8px;
+    background-color: white;
     text-align: right;
-  
+    color: black;
+    margin-left: 25%;
 }
 
 .grid2 {
