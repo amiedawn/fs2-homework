@@ -9,7 +9,6 @@
 </head>
 <body>
     <h1>CALCULATOR</h1>
-    <h3>Please enter 2 numbers and the symbol to get the result.</h3>
     <div class="grid1">
         <label for="num1">Number 1: </label>
         <input type="text" id="num1" class="numbers" />
@@ -21,10 +20,24 @@
         <input type="text" id="answer" class="numbers" />
     </div>
     <div class="grid2">
-        <button class="cell" id="times" onclick="multiplyNums()">X</button>
-        <button class="cell" id="plus" onclick="addNums()">+</button>
-        <button class="cell" id="divided" onclick="divideNums()">÷</button>
-        <button class="cell" id="minus" onclick="subtractNums()">-</button>
+        <button class="item1 cell" id="times">X</button>
+        <button class="item2 cell" id="nine" value="9">9</button>
+        <button class="item3 cell" id="eight" value="8">8</button>
+        <button class="item4 cell" id="seven" value="7">7</button>
+        <button class="item5 cell" id="plus">+</button>
+        
+        <button class="item6 cell" id="buttonided">÷</button>
+        <button class="item7 cell" id="six" value="6">6</button>
+        <button class="item8 cell" id="five" value="5">5</button>
+        <button class="item9 cell" id="four" value="4">4</button>
+        <button class="item10 cell" id="minus">-</button>
+
+        <button class="item11 cell" id="equals" 
+        onclick ? ="divideNums()">=</button>
+        <button class="item12 cell" id="three" value="3">3</button>
+        <button class="item13 cell" id="two" value="2">2</button>
+        <button class="item14 cell" id="one" value="1">1</button>
+        <button class="item15 cell" id="zero" value="0">0</button>
     </div>    
     <div id="clear"><button class="cell" onclick="clearScreen()">CLEAR ALL</button></div>
 </body>
