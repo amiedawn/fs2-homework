@@ -1,0 +1,56 @@
+* {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: pink;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.grid1 {
+    display: grid;
+    grid-template-columns: 33.33% 66.66%;
+    grid-template-rows: 20px;
+    padding: 25px;
+    grid-gap: 2em;
+    margin: 0 35%;
+    font-size: 25px;
+
+}
+
+.numbers {
+    height: 35px;
+    width: 150px;
+    font-size: 25px;
+    padding: 8px;
+    text-align: right;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 1em;
+    font-size: 35px;
+    justify-content: center;
+    margin: 25px 35%;
+}
+
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 
+}
+
+.cell {
+    border-radius: 5px;
+    border-style: 5px black solid;
+    padding: 12px;
+    background-color: white;
+    font-size: 30px;
+
+}
+
+#clear {
+    text-align: center;
+    margin: 0 auto;
+}
