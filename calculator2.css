@@ -8,23 +8,19 @@ h1 {
     text-align: center;
 }
 
-.grid1 {
-    display: grid;
-    grid-template-columns: 33.33% 66.66%;
-    grid-template-rows: 20px;
-    padding: 25px;
-    grid-gap: 2em;
-    margin: 0 35%;
-    font-size: 25px;
-
-}
+.container {
+    display: flex;
+    justify-content: center;
+   
+} 
 
 .numbers {
-    height: 35px;
-    width: 150px;
+    /* height: 35px;
+    width: 350px; */
     font-size: 25px;
     padding: 8px;
     text-align: right;
+  
 }
 
 .grid2 {
