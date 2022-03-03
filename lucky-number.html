@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/lucky-number.css">
+    <title>Lucky Number</title>
+</head>
+<body>
+    <h1 class="text-center text-danger">Guess the Lucky Number!</h1>
+    <div class="container">
+        <div class="row d-inline-block">
+            <div class="col-xs-8"><label for="l-number" id="number">Please guess a number between 1-10:</div>
+            <div class="col-xs-4"><input type="number"  id="l-number" min="1" max="10"></div>
+        </div>
+        <div class="check-button"><button class="btn btn-info text-danger" onclick="checkNumber()">Check Number</button></div>
+        <div class="row">
+            <div class="col-xs-8"><label for="guesses">Number of Guesses: </label></div>
+            <div class="col-xs-4"><input type="text" name="guesses" id="guesses" value="0" disabled></p></div>
+        <p id="guess-msg"></p>
+        </div>
+    </div>
+</body>
+<script>
+    const LUCKY_NUMBER = 3;
+    function checkNumber() {
+        let numEl = document.getElementById("l-number").value;
+        let msg="";
+        let count = document.getElementById("guesses").value;
+        count++;
+        document.getElementById("guesses").value = count;
+        
+
+        if (numEl == LUCKY_NUMBER) {
+            msg = "Congratulations! You have guess correctly in " + count + " turn(s)!";
+
+        } else {
+            msg = "Sorry, you have guessed incorrectly. Please try again!";
+            document.getElementById("l-number").value = "";
+        }
+        console.log("numEl: ", numEl);
+        console.log("count ", count);
+        
+        
+        document.getElementById("guess-msg").innerHTML = msg;
+        
+    };
+</script>
+</html>

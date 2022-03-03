@@ -1,0 +1,19 @@
+body {
+   font-family:Verdana, Geneva, Tahoma, sans-serif;
+   background-color: lightgreen;
+}
+
+.container {
+    width: 60%;
+    height: 35%;
+    margin-top: 35px;
+}
+
+.check-button {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#guess-msg {
+    margin-left: 1em;
+}
