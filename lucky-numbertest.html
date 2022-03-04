@@ -18,15 +18,12 @@
 </body>
 <script>
     const LUCKY_NUMBER = 8;
-
+    let tries = 0;
+    
     function checkLuckyNumber() {
         let msg;
-        let tries = 0;
-        tries= parseInt(document.getElementById("guesses").value);
         let inputNumEl = document.getElementById("input-num").value;
-        console.log(typeof tries);
-        console.log(tries);
-
+      
         tries++;
         document.getElementById("guesses").innerHTML = tries;
         if (inputNumEl == LUCKY_NUMBER) {

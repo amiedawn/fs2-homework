@@ -29,11 +29,10 @@
         let numEl = document.getElementById("l-number").value;
         let msg="";
         let count = document.getElementById("guesses").value;
-        console.log(typeof count);
+     
         count++;
         document.getElementById("guesses").value = count;
         
-
         if (numEl == LUCKY_NUMBER) {
             msg = "Congratulations! You have guess correctly in " + count + " turn(s)!";
 
@@ -41,10 +40,7 @@
             msg = "Sorry, you have guessed incorrectly. Please try again!";
             document.getElementById("l-number").value = "";
         }
-        console.log("numEl: ", numEl);
-        console.log("count ", count);
-        
-        
+                    
         document.getElementById("guess-msg").innerHTML = msg;
         
     };
