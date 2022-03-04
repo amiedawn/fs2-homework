@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Number own</title>
+</head>
+<body>
+    <h2>Guess the Lucky Number</h2>
+    Take a guess: <input type="number" id="input-num" min="1" max="10" name="input-num"><br><br>
+    <!-- Number of Guesses: <input type="text" id="guesses" disabled> -->
+    Number of Guesses: <p id="guesses"></p>
+    <button id="check-number" onclick="checkLuckyNumber()">Check Number</button>
+    <p id="message"></p>
+
+
+</body>
+<script>
+    const LUCKY_NUMBER = 8;
+
+    function checkLuckyNumber() {
+        let msg;
+        let tries = 0;
+        tries= parseInt(document.getElementById("guesses").value);
+        let inputNumEl = document.getElementById("input-num").value;
+        console.log(typeof tries);
+        console.log(tries);
+
+        tries++;
+        document.getElementById("guesses").innerHTML = tries;
+        if (inputNumEl == LUCKY_NUMBER) {
+            msg = "Congratulations! You have guessed the lucky number in " + tries + " tries!";
+            
+
+        } else {
+            msg = "That guess is incorrect. Please try again!";
+            inputNumEl = "";             
+        }
+        document.getElementById("message").innerHTML = msg;
+    };
+</script>
+</html>
