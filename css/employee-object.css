@@ -1,0 +1,22 @@
+body {
+   background-color: lightgrey;
+
+}
+
+h1 {
+    /* margin: 25px 45px; */
+
+}
+
+.container {
+    box-sizing: border-box;
+    margin: 20px auto;
+}
+
+.row {
+    padding: 10px;
+}
+
+.btn {
+    margin: 10px;
+}
