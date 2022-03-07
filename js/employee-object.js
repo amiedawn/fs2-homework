@@ -33,14 +33,20 @@ const saveForm = (e) => {
     // append to array 
     employees.push(employee);
     console.log(employees);
-    const capDesignation = employee.designation.charAt(0).toUpperCase() + employee.designation.slice(1);
-
-    document.getElementById("employee-output").innerHTML = 
-    employee.name + " who is a '" + capDesignation + "' will get $" + employee.salary;
 
     // clear form for future entries
     document.querySelector('form').reset();
-  
+
+    // capitalize the first letter only of the employee designation
+    const capDesignation = employee.designation.charAt(0).toUpperCase() + employee.designation.slice(1);
+
+    document.open();
+    document.write(employee.name + " who is a '" + capDesignation + "' will get $" + employee.salary);
+    document.close();
+
+    // use this to print to the same page
+    // document.getElementById("employee-output").innerHTML = 
+    // employee.name + " who is a '" + capDesignation + "' will get $" + employee.salary;
 };
 
 document.getElementById('submit-details').addEventListener('click', saveForm);
