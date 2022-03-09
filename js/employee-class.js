@@ -13,24 +13,81 @@ if (mm<10) {
 }
 
 today = yyyy + "-" + mm + "-" + dd;
-document.getElementById("datepicker").setAttribute("max", today);
+document.getElementById("date").setAttribute("max", today);
 
 
 const saveForm = (e) => {
     e.preventDefault();
 
-    // get data from each form element
-    let employee = {
-        name: document.getElementById("name").value,
-        empId: document.getElementById("emp-id").value,
-        date: document.getElementById("date").value,
-        hours: document.getElementById("hours").value,
-        designation: document.getElementById("designation").value
-    }
+    let name = document.getElementById("name").value;
+    let empId = document.getElementById("emp-id").value;
+    let date = document.getElementById("date").value;
+    let hours = document.getElementById("hours").value;
+    let designation = document.getElementById("designation").value;
 
-    if (employee.name === "" || employee.empId === "" ||
-     employee.date === "" || employee.hours === "" || 
-     employee.designation === "" || employee.designation === "select-one") {
+    // get data from each form element
+    class Employee {
+        #name;
+        #empId;
+        #date;
+        #hours;
+        #designation;
+
+        constructor(name, empId, date, hours, designation) {
+            this.#name = name;
+            this.#empId = empId;
+            this.#date = date;
+            this.#hours = hours;
+            this.#designation = designation;
+        }
+
+        set name(name)  {
+            this.#name = name;
+        }
+
+        get name() {
+            return this.#name;
+        }
+
+        set empId(empId)  {
+            this.#empId = empId;
+        }
+
+        get empId() {
+            return this.#empId;
+        }
+
+        set date(date)  {
+            this.#date = date;
+        }
+
+        get date() {
+            return this.#date;
+        }
+
+        set hours(hours)  {
+            this.#hours = hours;
+        }
+
+        get hours() {
+            return this.#hours;
+        }
+
+        set designation(designation)  {
+            this.#designation = designation;
+        }
+
+        get designation() {
+            return this.#designation;
+        }
+
+        
+    }
+    const employee1 = new Employee(name, empId, date, hours, designation);
+    console.log("emp1", employee1.designation)
+    if (name === "" || empId === "" ||
+     date === "" || hours === "" || 
+     designation === "" || designation === "select-one") {
          alert ('All fields are required. Please complete each field.');
          return;
     }
@@ -38,27 +95,27 @@ const saveForm = (e) => {
 
     let salary = 0;
    
-    if (employee.designation === "manager") {
-        salary = employee.hours * 90;
-    } else if (employee.designation === "consultant") {
-        salary = employee.hours * 70;
+    if (designation === "manager") {
+        salary = hours * 90;
+    } else if (designation === "consultant") {
+        salary = hours * 70;
     } else {
-        salary = employee.hours * 45;
+        salary = hours * 45;
     }
     console.log(salary);
-    employee.salary = salary;
+   
     // append to array 
-    employees.push(employee);
+    employees.push(employee1);
     console.log(employees);
 
     // clear form for future entries
     document.querySelector('form').reset();
 
     // capitalize the first letter only of the employee designation
-    const capDesignation = employee.designation.charAt(0).toUpperCase() + employee.designation.slice(1);
+    const capDesignation = designation.charAt(0).toUpperCase() + designation.slice(1);
 
     document.open();
-    document.write(employee.name + " who is a '" + capDesignation + "' will get $" + employee.salary);
+    document.write(name + " who is a '" + capDesignation + "' will get $" + salary);
     document.close();
 
     // use this to print to the same page
