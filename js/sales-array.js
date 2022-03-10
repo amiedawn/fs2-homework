@@ -77,12 +77,14 @@ class Sale {
 function calcTotal(sales) {
     let sale1 = sales.map(sale => {
         let {stock, original, discount = 0.0} = sale;
-        sale['sale'] = original - (original*discount);
-        sale['total'] = sale.sale * sale.stock;
+        sale['sale'] = Number((original - (original * discount)).toFixed(2));
+
+        sale['total'] = sale.sale * stock;
         return sale;
     });
     console.log(sale1);
     return sale1;
+   
 };
 
 calcTotal(sales);
